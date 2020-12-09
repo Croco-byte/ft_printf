@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 14:35:54 by user42            #+#    #+#             */
-/*   Updated: 2020/12/04 14:36:26 by user42           ###   ########.fr       */
+/*   Updated: 2020/12/09 16:32:49 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ void			get_attr(t_attr *tmp, const char *format, int *i, va_list argmt)
 	*i = (*i) + 1;
 	while (format[*i])
 	{
-		if (!ft_isdigit(format[*i]) && !is_flag(format[*i]) && !is_type(format[*i]))
+		if (!ft_isdigit(format[*i]) && !is_flag(format[*i]) && !is_type(format[*i])
+				&& format[*i] != '%')
 			break;
 		if (format[*i] == '0')
 			extr_zeros_flag(tmp);
@@ -27,9 +28,9 @@ void			get_attr(t_attr *tmp, const char *format, int *i, va_list argmt)
 			extr_dot_flag(tmp, format, i, argmt);
 		if (format[*i] == '*' || ft_isdigit(format[*i]))
 			extr_width_flag(tmp, format, i, argmt);
-		if (is_type(format[*i]))
+		if (is_type(format[*i]) || format[*i] == '%')
 		{
-			tmp->type = format[*i];
+			tmp->type = (is_type(format[*i])) ? format[*i] : '%';
 			*i = (*i) + 1;
 			break;
 		}
@@ -58,6 +59,7 @@ void			extr_width_flag(t_attr *tmp, const char *format, int *i, va_list argmt)
 		if (tmp->width < 0)
 		{
 			tmp->minus = 1;
+			tmp->zeros = 0;
 			tmp->width *= -1;
 		}
 	}

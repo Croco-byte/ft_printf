@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/05 13:25:01 by user42            #+#    #+#             */
-/*   Updated: 2020/12/07 15:58:18 by user42           ###   ########.fr       */
+/*   Updated: 2020/12/09 11:19:34 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,25 @@ static char			*create_result(t_attr tmp, int nb_len)
 static void		fill_right(char *nb_str, char *result, t_attr tmp, int nb_len)
 {
 	int i;
+	int k;
 
 	i = 0;
-	while (i < tmp.width - nb_len)
+	k = 0;
+	if (nb_str[0] == '-' && tmp.zeros == 1)
+		result[i++] = '-';
+	while (k < tmp.width - nb_len)
 	{
 		if (tmp.zeros == 0)
 			result[i] = ' ';
 		if (tmp.zeros == 1)
 			result[i] = '0';
 		i++;
+		k++;
 	}
-	ft_strlcpy(result + i, nb_str, nb_len + 1);
+	if (nb_str[0] == '-' && tmp.zeros == 1)
+		ft_strlcpy(result + i, nb_str + 1, nb_len);
+	else
+		ft_strlcpy(result + i, nb_str, nb_len + 1);
 }
 
 static void		fill_left(char *nb_str, char *result, t_attr tmp)

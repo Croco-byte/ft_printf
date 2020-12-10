@@ -6,17 +6,11 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 14:46:38 by user42            #+#    #+#             */
-/*   Updated: 2020/12/09 12:08:29 by user42           ###   ########.fr       */
+/*   Updated: 2020/12/10 12:02:04 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-
-int			handle_percent()
-{
-	ft_putchar_fd('%', 1);
-	return (1);
-}
 
 int			print_conv(t_attr tmp, va_list argmt)
 {
@@ -36,7 +30,7 @@ int			print_conv(t_attr tmp, va_list argmt)
 	if (tmp.type == 'p')
 		char_nb = handle_p(va_arg(argmt, long), tmp);
 	if (tmp.type == '%')
-		char_nb = handle_percent();
+		char_nb = handle_percent(tmp);
 	return (char_nb);
 }
 

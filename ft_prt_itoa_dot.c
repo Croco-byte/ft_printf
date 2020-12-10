@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 11:39:44 by user42            #+#    #+#             */
-/*   Updated: 2020/12/07 15:07:49 by user42           ###   ########.fr       */
+/*   Updated: 2020/12/10 12:31:52 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ static char		*case_of_zero()
 {
 	char	*result;
 
-	if (!(result = malloc(6 * sizeof(char))))
+	if (!(result = malloc(4 * sizeof(char))))
 		return (0);
-	ft_strlcpy(result, "(nil)", 6);
+	ft_strlcpy(result, "0x0", 4);
 	return (result);
 }
 

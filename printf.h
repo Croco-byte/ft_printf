@@ -52,6 +52,7 @@ char			*ft_ptr_itoa_dot(long n, t_attr tmp);
 int				handle_u(unsigned int nb, t_attr tmp);
 int				handle_x(unsigned int nb, t_attr tmp);
 int				handle_p(long nb, t_attr tmp);
+int				handle_percent(t_attr tmp);
 
 #endif
 

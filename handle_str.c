@@ -6,37 +6,18 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 16:13:00 by user42            #+#    #+#             */
-/*   Updated: 2020/12/09 15:46:12 by user42           ###   ########.fr       */
+/*   Updated: 2020/12/10 12:21:23 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-
-char				*handle_NULL(t_attr tmp)
-{
-	char	*null_str;
-
-	if (tmp.dot < 6 && tmp.dot >= 0)
-	{
-		if (!(null_str = malloc((1) * sizeof(char))))
-			return (0);
-		ft_strlcpy(null_str, "", 1);
-	}
-	else
-	{
-		if (!(null_str = malloc((7) * sizeof(char))))
-			return (0);
-		ft_strlcpy(null_str, "(null)", 7);
-	}
-	return (null_str);
-}
 
 char				*precision_cut(char *str, t_attr tmp)
 {
 	char	*new_str;
 
 	if(!str)
-		return (new_str = handle_NULL(tmp));
+		str = "(null)";
 	if (tmp.dot < 0 || tmp.dot >= (int)ft_strlen(str))
 	{
 		if (!(new_str = malloc(((int)ft_strlen(str) + 1) * sizeof(char))))

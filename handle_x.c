@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/06 15:51:53 by user42            #+#    #+#             */
-/*   Updated: 2020/12/10 13:24:07 by user42           ###   ########.fr       */
+/*   Updated: 2020/12/10 19:08:53 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,9 +77,11 @@ int				handle_x(unsigned int nb, t_attr tmp)
 	char	*nb_str;
 	int		nb_len;
 
-	nb_str = ft_un_itoa_base_dot(nb, tmp);
+	if (!(nb_str = ft_un_itoa_base_dot(nb, tmp)))
+		return (0);
 	nb_len = (int)ft_strlen(nb_str);
-	result = create_result(tmp, nb_len);
+	if (!(result = create_result(tmp, nb_len)))
+		return (0);
 	if (tmp.width <= nb_len)
 		ft_strlcpy(result, nb_str, nb_len + 1);
 	else

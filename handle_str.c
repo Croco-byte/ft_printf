@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 16:13:00 by user42            #+#    #+#             */
-/*   Updated: 2020/12/10 13:22:58 by user42           ###   ########.fr       */
+/*   Updated: 2020/12/10 19:08:29 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,8 @@ int				handle_str(char *str, t_attr tmp)
 	int		str_len;
 	char	*result;
 
-	str = precision_cut(str, tmp);
+	if (!(str = precision_cut(str, tmp)))
+		return (0);
 	str_len = (int)ft_strlen(str);
 	if (!(result = create_result(tmp, str_len)))
 		return (0);

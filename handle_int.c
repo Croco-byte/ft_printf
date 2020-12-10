@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/05 13:25:01 by user42            #+#    #+#             */
-/*   Updated: 2020/12/10 13:20:32 by user42           ###   ########.fr       */
+/*   Updated: 2020/12/10 19:07:21 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,9 +85,11 @@ int				handle_int(int nb, t_attr tmp)
 	char	*nb_str;
 	int		nb_len;
 
-	nb_str = ft_itoa_dot(nb, tmp);
+	if (!(nb_str = ft_itoa_dot(nb, tmp)))
+		return (0);
 	nb_len = (int)ft_strlen(nb_str);
-	result = create_result(tmp, nb_len);
+	if (!(result = create_result(tmp, nb_len)))
+		return (0);
 	if (tmp.width <= nb_len)
 		ft_strlcpy(result, nb_str, nb_len + 1);
 	else

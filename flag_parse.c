@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 14:35:54 by user42            #+#    #+#             */
-/*   Updated: 2020/12/10 13:12:20 by user42           ###   ########.fr       */
+/*   Updated: 2020/12/10 15:37:42 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ void			extr_dot_flag(t_attr *tmp, const char *format, int *i,
 {
 	*i = (*i) + 1;
 	tmp->dot = 0;
-	tmp->zeros = 0;
 	while (ft_isdigit(format[*i]) || format[*i] == '*' || format[*i] == '-')
 	{
 		if (ft_isdigit(format[*i]))
@@ -101,4 +100,6 @@ void			extr_dot_flag(t_attr *tmp, const char *format, int *i,
 			extr_minus_flag(tmp);
 		*i = (*i) + 1;
 	}
+	if (tmp->dot >= 0)
+		tmp->zeros = 0;
 }

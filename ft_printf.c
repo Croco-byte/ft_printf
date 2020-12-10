@@ -6,13 +6,13 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 14:46:38 by user42            #+#    #+#             */
-/*   Updated: 2020/12/10 12:02:04 by user42           ###   ########.fr       */
+/*   Updated: 2020/12/10 13:12:54 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int			print_conv(t_attr tmp, va_list argmt)
+int				print_conv(t_attr tmp, va_list argmt)
 {
 	int char_nb;
 
@@ -43,6 +43,8 @@ int				ft_printf(const char *format, ...)
 
 	i = 0;
 	counter = 0;
+	if (!format)
+		return (counter);
 	va_start(argmt, format);
 	while (format[i])
 	{
@@ -54,10 +56,7 @@ int				ft_printf(const char *format, ...)
 				counter += print_conv(tmp, argmt);
 		}
 		else
-		{
-			ft_putchar_fd(format[i++], 1);
-			counter++;
-		}
+			counter += ft_putchar_fd(format[i++], 1);
 	}
 	va_end(argmt);
 	return (counter);

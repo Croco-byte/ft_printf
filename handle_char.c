@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 15:33:59 by user42            #+#    #+#             */
-/*   Updated: 2020/12/09 13:08:06 by user42           ###   ########.fr       */
+/*   Updated: 2020/12/10 13:18:59 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ static void			fill_right(char c, char *result, t_attr tmp)
 	int i;
 
 	i = 0;
-	while(i < (tmp.width - 1))
-		{
-			result[i] = ' ';
-			i++;
-		}
-		result[i] = c;
+	while (i < (tmp.width - 1))
+	{
+		result[i] = ' ';
 		i++;
-		result[i] = '\0';
+	}
+	result[i] = c;
+	i++;
+	result[i] = '\0';
 }
 
 static void			fill_left(char c, char *result, t_attr tmp)
@@ -55,14 +55,13 @@ static void			fill_left(char c, char *result, t_attr tmp)
 	int i;
 
 	i = 0;
-
 	result[i] = c;
 	while (++i < tmp.width)
 		result[i] = ' ';
 	result[i] = '\0';
 }
 
-int				handle_char(char c, t_attr tmp)
+int					handle_char(char c, t_attr tmp)
 {
 	char	*result;
 	int		str_len;

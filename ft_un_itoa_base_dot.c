@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/06 15:44:35 by user42            #+#    #+#             */
-/*   Updated: 2020/12/07 14:15:16 by user42           ###   ########.fr       */
+/*   Updated: 2020/12/10 13:17:17 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static void		reverse_result(char *result)
 	}
 }
 
-static void			handle_precision(unsigned int n, char *result, int *i, t_attr tmp)
+static void		handle_prec(unsigned int n, char *result, int *i, t_attr tmp)
 {
 	int k;
 	int count;
@@ -106,7 +106,7 @@ char			*ft_un_itoa_base_dot(unsigned int n, t_attr tmp)
 		nbr /= 16;
 		i++;
 	}
-	handle_precision(n, result, &i, tmp);
+	handle_prec(n, result, &i, tmp);
 	result[i] = '\0';
 	reverse_result(result);
 	return (result);

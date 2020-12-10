@@ -6,13 +6,13 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 11:59:05 by user42            #+#    #+#             */
-/*   Updated: 2020/12/10 12:11:50 by user42           ###   ########.fr       */
+/*   Updated: 2020/12/10 13:22:17 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-static char			*create_result(t_attr tmp)
+static char		*create_result(t_attr tmp)
 {
 	char *result;
 
@@ -29,36 +29,35 @@ static char			*create_result(t_attr tmp)
 	return (result);
 }
 
-static void			fill(char *result)
+static void		fill(char *result)
 {
 	result[0] = '%';
 	result[1] = '\0';
 }
 
-static void			fill_right(char *result, t_attr tmp)
+static void		fill_right(char *result, t_attr tmp)
 {
 	int i;
 
 	i = 0;
-	while(i < (tmp.width - 1))
-		{
-			if (tmp.zeros == 1)
-				result[i] = '0';
-			if (tmp.zeros == 0)
-				result[i] = ' ';
-			i++;
-		}
-		result[i] = '%';
+	while (i < (tmp.width - 1))
+	{
+		if (tmp.zeros == 1)
+			result[i] = '0';
+		if (tmp.zeros == 0)
+			result[i] = ' ';
 		i++;
-		result[i] = '\0';
+	}
+	result[i] = '%';
+	i++;
+	result[i] = '\0';
 }
 
-static void			fill_left(char *result, t_attr tmp)
+static void		fill_left(char *result, t_attr tmp)
 {
 	int i;
 
 	i = 0;
-
 	result[i] = '%';
 	while (++i < tmp.width)
 		result[i] = ' ';

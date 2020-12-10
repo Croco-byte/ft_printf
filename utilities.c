@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 16:09:38 by user42            #+#    #+#             */
-/*   Updated: 2020/12/07 14:19:26 by user42           ###   ########.fr       */
+/*   Updated: 2020/12/10 13:24:37 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_attr	new_attr(void)
 	new.width = 0;
 	new.type = 0;
 	new.star = 0;
-	return(new);
+	return (new);
 }
 
 int		itoa_size_base(long n, int base_size)
@@ -65,19 +65,4 @@ int		itoa_un_size_base(unsigned int n, int base_size)
 		count++;
 	}
 	return (count);
-}
-
-void			print_attr(t_attr tmp)
-{
-	ft_putstr_fd("[Left_aligned : ", 1);
-	ft_putnbr_fd(tmp.minus, 1);
-	ft_putstr_fd(" - Zeros : ", 1);
-	ft_putnbr_fd(tmp.zeros, 1);
-	ft_putstr_fd(" - Width : ", 1);
-	ft_putnbr_fd(tmp.width, 1);
-	ft_putstr_fd(" - dot : ", 1);
-	ft_putnbr_fd(tmp.dot, 1);
-	ft_putstr_fd(" - Type : ", 1);
-	ft_putchar_fd(tmp.type, 1);
-	ft_putchar_fd(']', 1);
 }

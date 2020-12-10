@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                        :+:      :+:    :+:   */
+/*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/03 11:36:29 by user42            #+#    #+#             */
-/*   Updated: 2020/12/03 11:36:29 by user42           ###   ########.fr       */
+/*   Created: 2020/12/10 13:25:08 by user42            #+#    #+#             */
+/*   Updated: 2020/12/10 13:26:11 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,27 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <fcntl.h>
-#include "libft/libft.h"
+# include "libft/libft.h"
 
-typedef struct		s_attr
+typedef struct	s_attr
 {
-	int		minus;
-	int		zeros;
-	int		width;
-	int		dot;
-	int		star;
-	char	type;
-}					t_attr;
+	int			minus;
+	int			zeros;
+	int			width;
+	int			dot;
+	int			star;
+	char		type;
+}				t_attr;
 
-void			print_attr(t_attr tmp);													// To delete
 t_attr			new_attr(void);
-void			get_attr(t_attr *tmp, const char *format, int *i, va_list argmt);
+void			get_attr(t_attr *tmp, const char *format, int *i,
+				va_list argmt);
 void			extr_zeros_flag(t_attr *tmp);
 void			extr_minus_flag(t_attr *tmp);
-void			extr_width_flag(t_attr *tmp, const char *format, int *i, va_list argmt);
-void			extr_dot_flag(t_attr *tmp, const char *format, int *i, va_list argmt);
+void			extr_width_flag(t_attr *tmp, const char *format, int *i,
+				va_list argmt);
+void			extr_dot_flag(t_attr *tmp, const char *format, int *i,
+				va_list argmt);
 int				ft_printf(const char *format, ...);
 int				is_flag(char c);
 int				is_type(char c);
@@ -55,12 +57,3 @@ int				handle_p(long nb, t_attr tmp);
 int				handle_percent(t_attr tmp);
 
 #endif
-
-/* To do :
- - Mettre les fonctions des handlers en statique
-
-  - AJouter dans les tests : nombre finissant par 0 ; nombre commençant par 0 ; nombre négatif finissant par 0 ; nombre négatif commençant par 0
-  - Bien vérifier que tout marche avec INT_MIN et INT_MAX;
-  - Essayer unsigned int max pour type u.
-
- */

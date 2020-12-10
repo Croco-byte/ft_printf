@@ -6,17 +6,17 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 16:13:00 by user42            #+#    #+#             */
-/*   Updated: 2020/12/10 12:21:23 by user42           ###   ########.fr       */
+/*   Updated: 2020/12/10 13:22:58 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-char				*precision_cut(char *str, t_attr tmp)
+char			*precision_cut(char *str, t_attr tmp)
 {
 	char	*new_str;
 
-	if(!str)
+	if (!str)
 		str = "(null)";
 	if (tmp.dot < 0 || tmp.dot >= (int)ft_strlen(str))
 	{
@@ -33,7 +33,7 @@ char				*precision_cut(char *str, t_attr tmp)
 	return (new_str);
 }
 
-static char			*create_result(t_attr tmp, int str_len)
+static char		*create_result(t_attr tmp, int str_len)
 {
 	char *result;
 
@@ -81,8 +81,7 @@ static void		fill_left(char *str, char *result, t_attr tmp)
 	result[i] = '\0';
 }
 
-
-int			handle_str(char *str, t_attr tmp)
+int				handle_str(char *str, t_attr tmp)
 {
 	int		str_len;
 	char	*result;

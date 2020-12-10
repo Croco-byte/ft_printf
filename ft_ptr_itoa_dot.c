@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 11:39:44 by user42            #+#    #+#             */
-/*   Updated: 2020/12/10 12:31:52 by user42           ###   ########.fr       */
+/*   Updated: 2020/12/10 13:14:31 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int		result_size(long n, t_attr tmp)
 	return (count);
 }
 
-static char		*case_of_zero()
+static char		*case_of_zero(void)
 {
 	char	*result;
 

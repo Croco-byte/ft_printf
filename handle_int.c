@@ -6,13 +6,13 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/05 13:25:01 by user42            #+#    #+#             */
-/*   Updated: 2020/12/09 11:19:34 by user42           ###   ########.fr       */
+/*   Updated: 2020/12/10 13:20:32 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-static char			*create_result(t_attr tmp, int nb_len)
+static char		*create_result(t_attr tmp, int nb_len)
 {
 	char *result;
 
@@ -79,8 +79,7 @@ static void		fill_left(char *nb_str, char *result, t_attr tmp)
 	result[i] = '\0';
 }
 
-
-int			handle_int(int nb, t_attr tmp)
+int				handle_int(int nb, t_attr tmp)
 {
 	char	*result;
 	char	*nb_str;

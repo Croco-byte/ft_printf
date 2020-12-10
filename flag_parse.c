@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 14:35:54 by user42            #+#    #+#             */
-/*   Updated: 2020/12/09 16:32:49 by user42           ###   ########.fr       */
+/*   Updated: 2020/12/10 13:12:20 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void			get_attr(t_attr *tmp, const char *format, int *i, va_list argmt)
 	*i = (*i) + 1;
 	while (format[*i])
 	{
-		if (!ft_isdigit(format[*i]) && !is_flag(format[*i]) && !is_type(format[*i])
-				&& format[*i] != '%')
-			break;
+		if (!ft_isdigit(format[*i]) && !is_flag(format[*i]) &&
+			!is_type(format[*i]) && format[*i] != '%')
+			break ;
 		if (format[*i] == '0')
 			extr_zeros_flag(tmp);
 		if (format[*i] == '-')
@@ -32,7 +32,7 @@ void			get_attr(t_attr *tmp, const char *format, int *i, va_list argmt)
 		{
 			tmp->type = (is_type(format[*i])) ? format[*i] : '%';
 			*i = (*i) + 1;
-			break;
+			break ;
 		}
 		*i = (*i) + 1;
 	}
@@ -50,7 +50,8 @@ void			extr_minus_flag(t_attr *tmp)
 	tmp->zeros = 0;
 }
 
-void			extr_width_flag(t_attr *tmp, const char *format, int *i, va_list argmt)
+void			extr_width_flag(t_attr *tmp, const char *format, int *i,
+				va_list argmt)
 {
 	if (format[*i] == '*')
 	{
@@ -74,7 +75,8 @@ void			extr_width_flag(t_attr *tmp, const char *format, int *i, va_list argmt)
 	}
 }
 
-void			extr_dot_flag(t_attr *tmp, const char *format, int *i, va_list argmt)
+void			extr_dot_flag(t_attr *tmp, const char *format, int *i,
+				va_list argmt)
 {
 	*i = (*i) + 1;
 	tmp->dot = 0;

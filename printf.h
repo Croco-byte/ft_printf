@@ -6,17 +6,16 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 13:25:08 by user42            #+#    #+#             */
-/*   Updated: 2020/12/10 13:26:11 by user42           ###   ########.fr       */
+/*   Updated: 2020/12/10 18:50:13 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRINTF_H
 # define PRINTF_H
 
-# include <stdio.h>
+# include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
-# include <fcntl.h>
 # include "libft/libft.h"
 
 typedef struct	s_attr

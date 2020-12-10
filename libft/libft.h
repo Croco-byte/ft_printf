@@ -6,15 +6,13 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 12:19:04 by user42            #+#    #+#             */
-/*   Updated: 2020/12/10 13:02:10 by user42           ###   ########.fr       */
+/*   Updated: 2020/12/10 18:50:28 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
-# include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
 

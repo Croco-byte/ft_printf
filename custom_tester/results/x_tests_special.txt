@@ -1,0 +1,128 @@
+
+Special case of printing 0 (no flags) :
+|0|
+[Length = 4]
+
+Special case of printing 0 (with width) :
+|           0|
+[Length = 15]
+
+Special case of printing 0 (with width and zero flag) :
+|000000000000|
+[Length = 15]
+
+Special case of printing 0 (with width = 0) :
+|0|
+[Length = 4]
+
+Special case of printing 0 (with precision) :
+|000000|
+[Length = 9]
+
+Special case of printing 0 (with precision = 0) :
+||
+[Length = 3]
+
+Special case of printing 0 (with width and precision) :
+|      000000|
+[Length = 15]
+
+Special case of printing an unsigned int beyond INT_MAX (no flags):
+|a|
+[Length = 4]
+
+Special case of printing an unsigned int below INT_MIN (no flags):
+|fffffff6|
+[Length = 11]
+
+Special case of printing an int beyond INT_MAX (with width):
+|                   a|
+[Length = 23]
+
+Special case of printing an int beyond INT_MAX (with width and precision):
+|     00000000000000a|
+[Length = 23]
+
+Special case of printing a negative int (no flags) :
+|ffffff62|
+[Length = 11]
+
+Special case of printing a negative int (with width) :
+|    ffffff62|
+[Length = 15]
+
+Special case of printing a negative int (with precision) :
+|0000000ffffff62|
+[Length = 18]
+
+Special case of printing a negative int (with width and precision) :
+|     0000000ffffff62|
+[Length = 23]
+
+Special case of printing a negative int (with width and 0 flag) :
+|000000000000ffffff62|
+[Length = 23]
+
+Special case of printing a negative int (with width, precision and minus) :
+|0000000ffffff62     |
+[Length = 23]
+
+Special case of printing negative 0 (no flags) :
+|0|
+[Length = 4]
+
+Special case of printing negative 0 (with width) :
+|       0|
+[Length = 11]
+
+Special case of printing negative 0 (with precision) :
+|000000|
+[Length = 9]
+
+Special case of printing negative 0 (with width and precision) :
+|      000000|
+[Length = 15]
+
+Special case of number with zeros at the end (no flags) :
+|b71b00|
+[Length = 9]
+
+Special case of number with zeros at the end (with width) :
+|              b71b00|
+[Length = 23]
+
+Special case of number with zeros at the end (with precision) :
+|00000000000000b71b00|
+[Length = 23]
+
+Special case of number with zeros at the end (with width and precision) :
+|     00000000000000b71b00|
+[Length = 28]
+
+Special case of negative number with zeros at the end (with width, precision and minus) :
+|000000000000ff48e500     |
+[Length = 28]
+
+Special case of number with zeros at the beginning (no flags) :
+|280000|
+[Length = 9]
+
+Special case of negative number with zeros at the beginning and at the end (with width, precision and minus) :
+|000000000000ffd80000     |
+[Length = 28]
+
+Special case of printing multiple zeros (no flags) :
+|0|
+[Length = 4]
+
+Special case of printing multiple negative zeros (with width, precision and minus) :
+|00000000000000000000     |
+[Length = 28]
+
+Special case of UNSIGNED INT MAX (no flags) :
+|4294967295|
+[Length = 13]
+
+Special case of a number beyond UNSIGNED INT MAX (precision flag) :
+|000004294967286|
+[Length = 18]

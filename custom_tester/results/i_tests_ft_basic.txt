@@ -1,0 +1,103 @@
+Simple (no flags) :
+|158|
+[Length = 6]
+
+With width :
+|     158|
+[Length = 11]
+
+With width and 0 :
+|0000000158|
+[Length = 13]
+
+With width and precision (width bigger) :
+|      000158|
+[Length = 15]
+
+With width and precision (precision bigger) :
+|000000000158|
+[Length = 15]
+
+With width and precision (precision 0) :
+|   158|
+[Length = 9]
+
+With width and minus :
+|158         |
+[Length = 15]
+
+With width, minus and 0 :
+|158         |
+[Length = 15]
+
+With width, minus and precision (precision bigger) :
+|000000000158|
+[Length = 15]
+
+With width, minus and precision (width bigger) :
+|000158      |
+[Length = 15]
+
+With width, 0 and precision (precision bigger) :
+|000000000158|
+[Length = 15]
+
+With width, 0 and precision (width bigger) :
+|      000158|
+[Length = 15]
+
+With precision :
+|000158|
+[Length = 9]
+
+With precision = 0 :
+|158|
+[Length = 6]
+
+With precision and 0 :
+|000158|
+[Length = 9]
+
+With precision and minus :
+|000158|
+[Length = 9]
+
+With precision, minus and zero :
+|000158|
+[Length = 9]
+
+With only minus :
+|158|
+[Length = 6]
+
+With only zero :
+|158|
+[Length = 6]
+
+With width as argument :
+|         158|
+[Length = 15]
+
+With width = 0 as argument :
+|158|
+[Length = 6]
+
+With negative width as argument :
+|158         |
+[Length = 15]
+
+With precision as argument :
+|000000000158|
+[Length = 15]
+
+With precision = 0 as argument :
+|158|
+[Length = 6]
+
+With negative precision as argument :
+|158|
+[Length = 6]
+
+With width and precision as argument :
+|      000158|
+[Length = 15]
